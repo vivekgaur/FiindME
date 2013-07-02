@@ -1,0 +1,35 @@
+#!/usr/bin/python
+
+#this script is to generate the random deals for testing.
+
+import sys
+import random 
+
+print "Reading the cities file\n"
+
+file_c = open('./cities.txt','rw')
+
+l_types = ["Auto","Food","Beauty"]
+
+l_time = ["Am","Pm"]
+
+print file_c
+
+total = len(sys.argv)
+
+count = 0
+city = []
+if total == 2:
+    in_str = str(sys.argv[1])
+    print in_str[0]
+    count = int(in_str[0])
+for line in file_c:
+    print line
+    city.append(line.strip())
+    
+l_city = len(city) - 1
+i = 0
+while i < count:
+    r_city = random.randint(0,l_city)
+    r_type = random.randint(0,len(l_type))                 
+    str1 = "INSERT INTO tbl_deals "

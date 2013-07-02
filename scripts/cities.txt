@@ -1,0 +1,10 @@
+sunnyvale
+san jose
+mountain view
+cupertino
+san francisco
+fremont
+dublin
+san ramon
+pleasanton
+milpitas
