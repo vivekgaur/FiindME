@@ -7,3 +7,8 @@ assets/*
 protected/runtime/*
 protected/data/*.db
 protected/tests/report/*
+*~
+*.zip
++*~
+\#*#
+.\#*
