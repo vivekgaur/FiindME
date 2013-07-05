@@ -90,13 +90,13 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'quantity'); ?>
 	<?/*php echo $form->textField($model,'quantity'); */?>
-	<?php echo CHtml::dropDownList('quantity','10',array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5)) ?>
+	<?php echo $form->dropDownList($model,'quantity',array('1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5)) ?>
 		<?php echo $form->error($model,'quantity'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'discount'); ?>
-	<?php echo CHtml::dropDownList('discount','10',array('5'=>5,'10'=>10,'15'=>15,'20'=>20,'25'=>25)) ?>
+	<?php echo $form->dropDownList($model,'discount',array('5'=>5,'10'=>10,'15'=>15,'20'=>20,'25'=>25)) ?>
 	<?/*php echo $form->textField($model,'discount'); */?>
 		<?php echo $form->error($model,'discount'); ?>
 	</div>

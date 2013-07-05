@@ -45,11 +45,14 @@ class Merchant extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('contact_id_fk, category_id_fk, last_update', 'required'),
+			array('contact_id_fk, category_id_fk', 'required'),
 			array('contact_id_fk, deals_list_id_fk, category_id_fk, user_analytics_id_fk', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('merchant_id, contact_id_fk, deals_list_id_fk, category_id_fk, user_analytics_id_fk, last_update', 'safe', 'on'=>'search'),
+			array('last_update','default',
+			      'value'=>new CDbExpression('NOW()'),
+			      'setOnEmpty'=>false,'on'=>'update'),
 		);
 	}
 

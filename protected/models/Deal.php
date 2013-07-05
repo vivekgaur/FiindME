@@ -51,12 +51,18 @@ class Deal extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('merchant_id_fk, title, description, create_time, last_update, start_time, end_time, quantity, status, discount, user_analytics_id_fk', 'required'),
+			array('merchant_id_fk, title, description, start_time, end_time, quantity,discount', 'required'),
 			array('merchant_id_fk, quantity, discount, user_analytics_id_fk', 'numerical', 'integerOnly'=>true),
 			array('title, status', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('deal_id, merchant_id_fk, title, description, create_time, last_update, start_time, end_time, quantity, status, discount, user_analytics_id_fk', 'safe', 'on'=>'search'),
+			array('last_update','default',
+			      'value'=>new CDbExpression('NOW()'),
+			      'setOnEmpty'=>false,'on'=>'update'),
+			array('create_time,last_update','default',
+			      'value'=>new CDbExpression('NOW()'),
+			      'setOnEmpty'=>false,'on'=>'insert'),
 		);
 	}
 
@@ -91,7 +97,7 @@ class Deal extends CActiveRecord
 			'end_time' => 'End Time',
 			'quantity' => 'Quantity',
 			'status' => 'Status',
-			'discount' => 'Discount',
+			'discount' => 'Discount (%)',
 			'user_analytics_id_fk' => 'User Analytics',
 		);
 	}

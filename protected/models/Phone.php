@@ -27,6 +27,15 @@ class Phone extends CActiveRecord
 	}
 
 	/**
+	 *Init function to set the default values
+	 */
+	public function init() 
+	{
+	  $this->country_code = 1;
+	  parent::init();
+	}
+
+	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -42,7 +51,7 @@ class Phone extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('country_code, area_code, number, extn', 'required'),
+			array('country_code, area_code, number', 'required'),
 			array('country_code, area_code, number, extn', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

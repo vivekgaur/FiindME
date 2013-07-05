@@ -22,27 +22,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'deals_list_id_fk'); ?>
-		<?php echo $form->textField($model,'deals_list_id_fk'); ?>
-		<?php echo $form->error($model,'deals_list_id_fk'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'category_id_fk'); ?>
-		<?php echo $form->textField($model,'category_id_fk'); ?>
+	<?php echo $form->dropDownList($model,'category_id_fk', CHtml::listData(Category::model()->findAll(array('order' => 'Name')),'category_id','Name'));?>
+	<?/*php echo $form->textField($model,'category_id_fk'); */?>
 		<?php echo $form->error($model,'category_id_fk'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_analytics_id_fk'); ?>
-		<?php echo $form->textField($model,'user_analytics_id_fk'); ?>
-		<?php echo $form->error($model,'user_analytics_id_fk'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_update'); ?>
-		<?php echo $form->textField($model,'last_update'); ?>
-		<?php echo $form->error($model,'last_update'); ?>
 	</div>
 
 	<div class="row buttons">

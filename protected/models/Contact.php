@@ -112,4 +112,13 @@ class Contact extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**Add the Address for this Contact class
+	 */
+	protected function addAddress($address)
+	{
+	  
+	  
+	}
+	
 }
