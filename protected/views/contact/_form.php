@@ -34,20 +34,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'address_id_fk'); ?>
-		<?php echo $form->textField($model,'address_id_fk'); ?>
+    <?php echo $form->labelEx($model,'address_id_fk'); ?>
+	<?php $this->renderpartial('/address/_form',array('model'=>$model_address,)) ;?>
 		<?php echo $form->error($model,'address_id_fk'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'contact_phone_id_fk'); ?>
-		<?php echo $form->textField($model,'contact_phone_id_fk'); ?>
-		<?php echo $form->error($model,'contact_phone_id_fk'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'cell_phone_id_fk'); ?>
-		<?php echo $form->textField($model,'cell_phone_id_fk'); ?>
+	<?php $this->renderpartial('/phone/_form',array('model'=>$model_cell_phone,)) ;?>
 		<?php echo $form->error($model,'cell_phone_id_fk'); ?>
 	</div>
 

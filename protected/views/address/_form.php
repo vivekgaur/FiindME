@@ -47,7 +47,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'state_id_fk'); ?>
-		<?php echo $form->textField($model,'state_id_fk'); ?>
+		<?php echo $form->dropDownList($model,'state_id_fk', CHtml::listData(State::model()->findAll(array('order' => 'name')),'state_id','name'));?>
 		<?php echo $form->error($model,'state_id_fk'); ?>
 	</div>
 
@@ -59,14 +59,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'country_id_fk'); ?>
-		<?php echo $form->textField($model,'country_id_fk'); ?>
+	<?/*php echo $form->textField($model,'country_id_fk'); */?>
+	<?php echo $form->dropDownList($model,'country_id_fk', CHtml::listData(Country::model()->findAll(array('order' => 'name')),'country_id','name'));?>
 		<?php echo $form->error($model,'country_id_fk'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'last_update'); ?>
-		<?php echo $form->textField($model,'last_update'); ?>
-		<?php echo $form->error($model,'last_update'); ?>
 	</div>
 
 	<div class="row buttons">

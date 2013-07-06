@@ -63,19 +63,34 @@ class ContactController extends Controller
 	public function actionCreate()
 	{
 		$model=new Contact;
+		$model_address = new Address();
+		//$model_phone = new Phone();
+		$model_cell_phone = new Phone();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Contact']))
+		if(isset($_POST['Contact']) and isset($_POST['Address']) and isset($_POST['Phone']))
 		{
-			$model->attributes=$_POST['Contact'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->contact_id));
+		  
+		  $model->attributes=$_POST['Contact'];
+		  $model_address->attributes=$_POST['Address'];
+		  $model_cell_phone->attributes=$_POST['Phone'];
+		  
+		  if($model_address->save() and $model_cell_phone->save())
+		    {
+		      $model->address_id_fk = $model_address->address_id;
+		      $model->cell_phone_id_fk = $model_cell_phone->phone_id;
+		    }
+
+		  if($model->save())
+		    $this->redirect(array('view','id'=>$model->contact_id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'model_address'=>$model_address,
+			'model_cell_phone'=>$model_cell_phone,
 		));
 	}
 

@@ -56,6 +56,9 @@ class Address extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('address_id, department, company, address_line_1, address_line_2, city_id_fk, state_id_fk, zip_code_id_fk, country_id_fk, last_update', 'safe', 'on'=>'search'),
+			array('last_update','default',
+			      'value'=>new CDbExpression('NOW()'),
+			      'setOnEmpty'=>false,'on'=>'update'),
 		);
 	}
 
@@ -119,5 +122,13 @@ class Address extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	/**
+	 *Return the list of countries
+	 */
+	public function getCountryOptions()
+	{
+	  $countryArray = CHMTL::listData($this->countryIdFk,'country_id','name');
+	  return $countryArray;
 	}
 }

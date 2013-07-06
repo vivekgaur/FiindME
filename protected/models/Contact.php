@@ -47,7 +47,7 @@ class Contact extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, address_id_fk, contact_phone_id_fk, cell_phone_id_fk', 'required'),
+			array('first_name, last_name, address_id_fk,cell_phone_id_fk', 'required'),
 			array('address_id_fk, contact_phone_id_fk, cell_phone_id_fk', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name', 'length', 'max'=>255),
 			array('middle_name', 'length', 'max'=>20),
@@ -117,7 +117,26 @@ class Contact extends CActiveRecord
 	 */
 	protected function addAddress($address)
 	{
+	  $address->save();
+	  $this->address_id_fk = $address->address_id;
 	  
+	}
+	
+	/**Add the Contact Phone for this Contact class
+	 */
+	protected function addContactPhone($contactPhone)
+	{
+	  $contactPhone->save();
+	  $this->contact_phone_id_fk = $contactPhone->phone_id;
+	  
+	}
+
+	/**Add the Cell Phone for this Cell class
+	 */
+	protected function addCellPhone($cellPhone)
+	{
+	  $cellPhone->save();
+	  $this->cell_phone_id_fk = $cellPhone->phone_id;
 	  
 	}
 	
