@@ -46,17 +46,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'deal_id',
-		'merchant_id_fk',
+		array('name'=>'merchant_id_fk', 'header'=>'Merchant', 'value'=>'$data->merchantIdFk->contactIdFk->addressIdFk->company'),
 		'title',
 		'description',
-		'create_time',
+		/*'create_time',
 		'last_update',
-		/*
+		*/
 		'start_time',
 		'end_time',
 		'quantity',
 		'status',
 		'discount',
+                /*
 		'user_analytics_id_fk',
 		*/
 		array(
