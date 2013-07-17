@@ -25,6 +25,7 @@
  */
 class Deal extends CActiveRecord
 {
+  public $zip_cide_search; //To search deal by zipcode
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -130,4 +131,40 @@ class Deal extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function findByZipcode($zip_code)
+	{
+	  $sql = "SELECT * FROM tbl_deal WHERE merchant_id_fk IN
+	    (SELECT merchant_id FROM tbl_merchant WHERE contact_id_fk  IN
+	     (SELECT  contact_id FROM tbl_contact WHERE address_id_fk  IN 
+	      (SELECT  address_id FROM tbl_address WHERE zip_code_id_fk IN 
+	       (SELECT zipcode_id FROM tbl_zipcode WHERE zip_code = :zip_code
+		)
+	       )
+	      )
+	     )";
+	  /*
+	  $sql = "SELECT * FROM `tbl_deal` WHERE `merchant_id_fk` IN
+	    (SELECT `merchant_id` FROM `tbl_merchant` WHERE `contact_id_fk`  IN
+	     (SELECT  `contact_id` FROM `tbl_contact` WHERE `address_id_fk`  IN 
+	      (SELECT  `address_id` FROM `tbl_address` WHERE `zip_code_id_fk` IN 
+	       (SELECT `zipcode_id` FROM `tbl_zipcode` WHERE `zip_code` = :zip_code
+
+		)
+	       )
+	      )
+	     ) LIMIT 0 , 30"
+	  */
+	  $result = Deal::model()->findAllBySql($sql,array(":zip_code"=>$zip_code));
+	  #$command = Yii::app()->db->createCommand($sql);
+	  #$command->bindValue(":zip_code",$zip_code, PDO::PARAM_INT);
+	  #$results = $command->queryRow();
+	  $rows = array();
+	  /*foreach($result as $deal){
+	    $mer = Merchant::model()->findByPk($deal->merchant_id_fk);
+	    echo $mer->contactIdFk->first_name;
+	    }*/
+	  return $result;
+	}
+
 }

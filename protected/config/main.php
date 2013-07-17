@@ -39,9 +39,15 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				 // REST patterns
+			 array('find/list', 'pattern'=>'find/<model:\w+>', 'verb'=>'GET'),
+			 array('find/view', 'pattern'=>'find/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
+			 array('find/update', 'pattern'=>'find/<model:\w+><id:\d+>', 'verb'=>'PUT'),
+			 array('find/delete', 'pattern'=>'find/<model:\w+>/<id:\d+>', 'verb'=>'DELETE'),
+			 array('find/create', 'pattern'=>'find/<model:\w+>', 'verb'=>'POST'),     
+			 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
+			 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+			 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
 		/*
