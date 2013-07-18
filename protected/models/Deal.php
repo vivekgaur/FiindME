@@ -142,7 +142,7 @@ class Deal extends CActiveRecord
 		)
 	       )
 	      )
-	     )";
+	     ) ORDER BY create_time DESC";
 	  /*
 	  $sql = "SELECT * FROM `tbl_deal` WHERE `merchant_id_fk` IN
 	    (SELECT `merchant_id` FROM `tbl_merchant` WHERE `contact_id_fk`  IN

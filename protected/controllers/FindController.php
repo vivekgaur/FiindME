@@ -119,13 +119,13 @@ class FindController extends Controller
  
     // Try to assign PUT parameters to attributes
     /*foreach($put_vars as $var=>$value) {
-        // Does model have this attribute? If not, raise an error
-        if($model->hasAttribute($var))
-            $model->$var = $value;
-        else {
-            $this->_sendResponse(500, 
-                sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>',
-                $var, $_GET['model']) );
+      // Does model have this attribute? If not, raise an error
+      if($model->hasAttribute($var))
+	$model->$var = $value;
+      else {
+	$this->_sendResponse(500, 
+			     sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>',
+				     $var, $_GET['model']) );
         }
 	}*/
     // Set the Deal status to "SOLD"
@@ -134,20 +134,22 @@ class FindController extends Controller
     $deal_merchant = array();
     $user_code = rand(100,999);
     echo $user_code;
-    echo $merchant_code;
     $merchant_code = rand(100,999);
+    echo $merchant_code;
     $deal_merchant[0] = $user_code;
 
+    $merchant = Merchant::model()->findByPk($model->merchant_id_fk);
+    
     //SQL Query
     $sql = "INSERT INTO tbl_deal_business_user (deal_id_fk,merchant_id_fk,user_code,merchant_code,status) VALUES (:deal_id,:merchant_id,:user_code,:merchant_code,:status)";
 
-    $command = Yii::app()->db->createCommand(sql);
+    $command = Yii::app()->db->createCommand($sql);
     $command->bindValue(":deal_id",$model->deal_id, PDO::PARAM_INT);
-    $command->bindValue(":merchant_id",$model->merchant_id_fk->merchant_id, PDO::PARAM_INT);
+    $command->bindValue(":merchant_id",$merchant->merchant_id, PDO::PARAM_INT);
     $command->bindValue(":user_code",$user_code, PDO::PARAM_INT);
-    $command->bindValue(":user_code",$merchant_code, PDO::PARAM_INT);
+    $command->bindValue(":merchant_code",$merchant_code, PDO::PARAM_INT);
     $command->bindValue(":status",$model->status, PDO::PARAM_STR);
-    $command->execute;
+    $command->execute();
 
     // Try to save the model
     if($model->save())
