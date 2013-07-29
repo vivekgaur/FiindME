@@ -1,4 +1,6 @@
 <?php
+#Yii::import('application.vendors.*');
+#require_once('class.xjson.php');
 class FindController extends Controller
 {
   /**
@@ -80,12 +82,99 @@ class FindController extends Controller
 	  $rows[] = $model;
 	}
         // Send the response
-        $this->_sendResponse(200, CJSON::encode($rows));
+	#$jsonC = new XJSON();
+	$xml = (CJSON::encode($rows));
+	#echo $xml;
+        $this->_sendResponse(200,$xml);
+      }
+    }
+
+    //GET: To view the deals by a specific merchant
+    //URL http://localhost/~vgaur/fiindme/index.php/find/deal/merchant/4
+    public function actionMerchant()
+    {
+      // Check if id was submitted via GET
+      if(!isset($_GET['id']))
+        $this->_sendResponse(500, 'Error: Parameter <b>id</b> is missing' );
+ 
+      switch($_GET['model'])
+	{
+	  // Find respective model    
+        case 'deal':
+	  $models = Deal::model()->findByMerchantId($_GET['id']);
+	  break;
+        default:
+	  $this->_sendResponse(501, sprintf(
+					    'Mode <b>view</b> is not implemented for model <b>%s</b>',
+					    $_GET['model']) );
+	  Yii::app()->end();
+	}
+      // Did we find the requested models? If not, raise an error
+      if(empty($models))
+        $this->_sendResponse(404, 'No Item found with id '.$_GET['id']);
+      else{
+	// Prepare response
+        $rows = array();
+        foreach($models as $model){
+	  $rows[] = $model;
+	}
+        // Send the response
+	#$jsonC = new XJSON();
+	$xml = (CJSON::encode($rows));
+	#echo $xml;
+        $this->_sendResponse(200,$xml);
       }
     }
 
     public function actionCreate()
     {
+      switch($_GET['model'])
+	{
+	  // Get an instance of the respective model
+	case 'deal':
+	  $model = new Deal;                    
+	  break;
+        default:
+	  $this->_sendResponse(501, 
+			       sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>',
+				       $_GET['model']) );
+	  Yii::app()->end();
+	}
+      // Try to assign POST values to attributes
+      //echo $_POST;
+      foreach($_POST as $var=>$value) {
+        // Does the model have this attribute? If not raise an error
+        if($model->hasAttribute($var)){
+	  if(($var === "start_time") || ($var === "end_time")){
+	    $value = $this->_convertDateToMysql($value);
+	  }
+	  $model->$var = $value;
+	}
+        else
+	  $this->_sendResponse(500, 
+			       sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>', $var,
+				       $_GET['model']) );
+    }
+      //Deal status is Available
+      $model->status= "Available"; 
+      // Try to save the model
+      if($model->save())
+        $this->_sendResponse(200, CJSON::encode($model));
+      else {
+        // Errors occurred
+        $msg = "<h1>Error</h1>";
+        $msg .= sprintf("Couldn't create model <b>%s</b>", $_GET['model']);
+        $msg .= "<ul>";
+        foreach($model->errors as $attribute=>$attr_errors) {
+	  $msg .= "<li>Attribute: $attribute</li>";
+	  $msg .= "<ul>";
+	  foreach($attr_errors as $attr_error)
+	    $msg .= "<li>$attr_error</li>";
+	  $msg .= "</ul>";
+        }
+        $msg .= "</ul>";
+        $this->_sendResponse(500, $msg );
+      }
     }
 
     //PUT: update confirm the deal. change the status to sold
@@ -96,47 +185,47 @@ class FindController extends Controller
     {
       //Parse the PUT parameters
       $json = file_get_contents('php://input');
-
+      
       $put_vars = CJSON::decode($json,true);  //true means use associative array
       
-       switch($_GET['model'])
-    {
-        // Find respective model
+      switch($_GET['model'])
+	{
+	  // Find respective model
         case 'deal':
-            $model = Deal::model()->findByPk($_GET['id']);                    
-            break;
+	  $model = Deal::model()->findByPk($_GET['id']);                    
+	  break;
         default:
-            $this->_sendResponse(501, 
-                sprintf( 'Error: Mode <b>update</b> is not implemented for model <b>%s</b>',
-                $_GET['model']) );
-            Yii::app()->end();
-    }
-    // Did we find the requested model? If not, raise an error
-    if($model === null)
+	  $this->_sendResponse(501, 
+			       sprintf( 'Error: Mode <b>update</b> is not implemented for model <b>%s</b>',
+					$_GET['model']) );
+	  Yii::app()->end();
+	}
+      // Did we find the requested model? If not, raise an error
+      if($model === null)
         $this->_sendResponse(400, 
-                sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.",
-                $_GET['model'], $_GET['id']) );
+			     sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.",
+				     $_GET['model'], $_GET['id']) );
  
-    // Try to assign PUT parameters to attributes
-    /*foreach($put_vars as $var=>$value) {
-      // Does model have this attribute? If not, raise an error
-      if($model->hasAttribute($var))
-	$model->$var = $value;
-      else {
-	$this->_sendResponse(500, 
-			     sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>',
-				     $var, $_GET['model']) );
-        }
-	}*/
-    // Set the Deal status to "SOLD"
-    $model->status = "SOLD";
+      // Try to assign PUT parameters to attributes
+      /*foreach($put_vars as $var=>$value) {
+       // Does model have this attribute? If not, raise an error
+       if($model->hasAttribute($var))
+       $model->$var = $value;
+       else {
+       $this->_sendResponse(500, 
+       sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>',
+       $var, $_GET['model']) );
+       }
+       }*/
+      // Set the Deal status to "SOLD"
+      $model->status = "SOLD";
 
-    $deal_merchant = array();
+      $deal_merchant = array();
     $user_code = rand(100,999);
-    echo $user_code;
+    //echo $user_code;
     $merchant_code = rand(100,999);
-    echo $merchant_code;
-    $deal_merchant[0] = $user_code;
+    //echo $merchant_code;
+    $deal_merchant['user_code'] = $user_code;
 
     $merchant = Merchant::model()->findByPk($model->merchant_id_fk);
     
@@ -152,8 +241,10 @@ class FindController extends Controller
     $command->execute();
 
     // Try to save the model
-    if($model->save())
-        $this->_sendResponse(200, CJSON::encode($deal_merchant));
+    if($model->save()){
+      $this->_sendResponse(200, json_encode($deal_merchant));
+      //echo json_encode($deal_merchant);
+    }
     else
         // prepare the error $msg
         // see actionCreate
@@ -244,6 +335,17 @@ class FindController extends Controller
 		     501 => 'Not Implemented',
 		     );
       return (isset($codes[$status])) ? $codes[$status] : '';
+    }
+
+    private function _convertDateToMysql($str_time)
+    {
+      echo "INSIDE";
+      $tdate = date("Y-m-d");
+      $tdate = $tdate . " ";
+      //add Sec
+      $tdate = $tdate . $str_time . ":" . "00";
+      echo $tdate;
+      return $tdate;      
     }
 }
 

@@ -132,9 +132,37 @@ class Deal extends CActiveRecord
 		));
 	}
 
+	public function findByMerchantId($merchant_id)
+	{
+	  $sql = "SELECT * FROM tbl_deal WHERE merchant_id_fk = :merchant_id
+	         ORDER BY status DESC";
+	  /*
+	  $sql = "SELECT * FROM `tbl_deal` WHERE `merchant_id_fk` IN
+	    (SELECT `merchant_id` FROM `tbl_merchant` WHERE `contact_id_fk`  IN
+	     (SELECT  `contact_id` FROM `tbl_contact` WHERE `address_id_fk`  IN 
+	      (SELECT  `address_id` FROM `tbl_address` WHERE `zip_code_id_fk` IN 
+	       (SELECT `zipcode_id` FROM `tbl_zipcode` WHERE `zip_code` = :zip_code
+
+		)
+	       )
+	      )
+	     ) LIMIT 0 , 30"
+	  */
+	  $result = Deal::model()->findAllBySql($sql,array(":merchant_id"=>$merchant_id));
+	  #$command = Yii::app()->db->createCommand($sql);
+	  #$command->bindValue(":zip_code",$zip_code, PDO::PARAM_INT);
+	  #$results = $command->queryRow();
+	  $rows = array();
+	  /*foreach($result as $deal){
+	    $mer = Merchant::model()->findByPk($deal->merchant_id_fk);
+	    echo $mer->contactIdFk->first_name;
+	    }*/
+	  return $result;
+	}
+
 	public function findByZipcode($zip_code)
 	{
-	  $sql = "SELECT * FROM tbl_deal WHERE merchant_id_fk IN
+	  $sql = "SELECT * FROM tbl_deal WHERE status = :status AND merchant_id_fk IN
 	    (SELECT merchant_id FROM tbl_merchant WHERE contact_id_fk  IN
 	     (SELECT  contact_id FROM tbl_contact WHERE address_id_fk  IN 
 	      (SELECT  address_id FROM tbl_address WHERE zip_code_id_fk IN 
@@ -155,7 +183,8 @@ class Deal extends CActiveRecord
 	      )
 	     ) LIMIT 0 , 30"
 	  */
-	  $result = Deal::model()->findAllBySql($sql,array(":zip_code"=>$zip_code));
+	  $status = "Available";
+	  $result = Deal::model()->findAllBySql($sql,array(":status"=>$status, ":zip_code"=>$zip_code));
 	  #$command = Yii::app()->db->createCommand($sql);
 	  #$command->bindValue(":zip_code",$zip_code, PDO::PARAM_INT);
 	  #$results = $command->queryRow();

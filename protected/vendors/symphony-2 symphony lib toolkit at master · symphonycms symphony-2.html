@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit -->
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-csspositionsticky filereader eventsource xhr2"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>symphony-2/symphony/lib/toolkit at master · symphonycms/symphony-2</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="fe17.rs.github.com">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="3342760" name="octolytics-actor-id"><meta content="vivekgaur" name="octolytics-actor-login"><meta content="d89bbeee3f07a0103e75552eb282d144d4bf22992cb9becca99dd107b4abd387" name="octolytics-actor-hash">
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="Lti9ewwo68fTZ68Gt6RhdTpkWgqQpmILBrf4AnXyRDI=" name="csrf-token">
+
+    <link href="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/github-a51b7140dfba9f0ae1fe0eaf345dd6a4381f4ef8.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/github2-ec4f51bae74d4ad5725891dccaecd4cc727d8cdc.css" media="all" rel="stylesheet" type="text/css">
+    
+
+
+      <script src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/frameworks-e8054ad804a1cf9e9849130fee5a4a5487b663ed.js" type="text/javascript"></script>
+      <script src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/github-90f8e0e909066dd1bee7ca4e33b769e7a28f0e3f.js" type="text/javascript"></script><script type="text/javascript" async="" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/ga.js"></script>
+      
+      <meta http-equiv="x-pjax-version" content="2faa5dbb764a951963be37a67771af2b">
+
+        <meta property="og:title" content="symphony-2">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/symphonycms/symphony-2">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="symphony-2 - This is the official Symphony 2 repository.">
+
+  <meta name="description" content="symphony-2 - This is the official Symphony 2 repository.">
+
+  <meta content="334029" name="octolytics-dimension-user_id"><meta content="symphonycms" name="octolytics-dimension-user_login"><meta content="780341" name="octolytics-dimension-repository_id"><meta content="symphonycms/symphony-2" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="780341" name="octolytics-dimension-repository_network_root_id"><meta content="symphonycms/symphony-2" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/symphonycms/symphony-2/commits/master.atom" rel="alternate" title="Recent Commits to symphony-2:master" type="application/atom+xml">
+
+  <script src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/api.js"></script></head>
+
+
+  <body class="logged_in  linux vis-public env-production " style="">
+
+    <div class="wrapper">
+      
+      
+      
+
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+    <div class="divider-vertical"></div>
+
+      <a href="https://github.com/notifications" class="notification-indicator tooltipped downwards" original-title="You have no unread notifications">
+    <span class="mail-status all-read"></span>
+  </a>
+  <div class="divider-vertical"></div>
+
+
+      <div class="command-bar js-command-bar  in-repository">
+          <form accept-charset="UTF-8" action="https://github.com/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="vivekgaur" data-repo="symphonycms/symphony-2" data-branch="master" data-sha="259371b4b174a5785ce16248a4dc46cd3d34b7f2">
+
+    <input type="hidden" name="nwo" value="symphonycms/symphony-2">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="octicon help tooltipped downwards" original-title="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+        <ul class="top-nav">
+            <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com/">Gist</a></li>
+            <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+  
+
+    <ul id="user-links">
+      <li>
+        <a href="https://github.com/vivekgaur" class="name">
+          <img height="20" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/64656218f18231b5c2eacfb613508822" width="20"> vivekgaur
+        </a>
+      </li>
+
+        <li>
+          <a href="https://github.com/new" id="new_repo" class="tooltipped downwards" aria-label="Create a new repo" original-title="Create a new repo">
+            <span class="octicon octicon-repo-create"></span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/settings/profile" id="account_settings" class="tooltipped downwards" aria-label="Account settings " original-title="Account settings ">
+            <span class="octicon octicon-tools"></span>
+          </a>
+        </li>
+        <li>
+          <a class="tooltipped downwards" href="https://github.com/logout" data-method="post" id="logout" aria-label="Sign out" original-title="Sign out">
+            <span class="octicon octicon-log-out"></span>
+          </a>
+        </li>
+
+    </ul>
+
+
+<div class="js-new-dropdown-contents hidden">
+  
+
+<ul class="dropdown-menu">
+  <li>
+    <a href="https://github.com/new"><span class="octicon octicon-repo-create"></span> New repository</a>
+  </li>
+  <li>
+    <a href="https://github.com/organizations/new"><span class="octicon octicon-organization"></span> New organization</a>
+  </li>
+
+
+
+    <li class="section-title">
+      <span title="symphonycms/symphony-2">This repository</span>
+    </li>
+    <li>
+      <a href="https://github.com/symphonycms/symphony-2/issues/new"><span class="octicon octicon-issue-opened"></span> New issue</a>
+    </li>
+</ul>
+
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="Lti9ewwo68fTZ68Gt6RhdTpkWgqQpmILBrf4AnXyRDI="></div>  <input id="repository_id" name="repository_id" type="hidden" value="780341">
+
+    <div class="select-menu js-menu-container js-select-menu">
+        <a class="social-count js-social-count" href="https://github.com/symphonycms/symphony-2/watchers">
+          54
+        </a>
+      <span class="minibutton select-menu-button with-count js-menu-target">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye-watch"></span>
+          Watch
+        </span>
+      </span>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notification status</span>
+            <span class="octicon octicon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container">
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_included" name="do" type="radio" value="included">
+                <h4>Not watching</h4>
+                <span class="description">You only receive notifications for discussions in which you participate or are @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-watch"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_subscribed" name="do" type="radio" value="subscribed">
+                <h4>Watching</h4>
+                <span class="description">You receive notifications for all discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-unwatch"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" type="radio" value="ignore">
+                <h4>Ignoring</h4>
+                <span class="description">You do not receive any notifications for discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+  
+<div class="js-toggler-container js-social-container starring-container ">
+  <a href="https://github.com/symphonycms/symphony-2/unstar" class="minibutton with-count js-toggler-target star-button starred upwards" title="Unstar this repo" data-remote="true" data-method="post" rel="nofollow">
+    <span class="octicon octicon-star-delete"></span><span class="text">Unstar</span>
+  </a>
+  <a href="https://github.com/symphonycms/symphony-2/star" class="minibutton with-count js-toggler-target star-button unstarred upwards " title="Star this repo" data-remote="true" data-method="post" rel="nofollow">
+    <span class="octicon octicon-star"></span><span class="text">Star</span>
+  </a>
+  <a class="social-count js-social-count" href="https://github.com/symphonycms/symphony-2/stargazers">403</a>
+</div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/symphonycms/symphony-2/fork" class="minibutton with-count js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post">
+            <span class="octicon octicon-git-branch-create"></span><span class="text">Fork</span>
+          </a>
+          <a href="https://github.com/symphonycms/symphony-2/network" class="social-count">127</a>
+        </li>
+
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/symphonycms" class="url fn" itemprop="url" rel="author"><span itemprop="title">symphonycms</span></a></span><span class="repohead-name-divider">/</span><strong><a href="https://github.com/symphonycms/symphony-2" class="js-current-repository js-repo-home-link">symphony-2</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+
+      <div class="repository-with-sidebar repo-container">
+
+        <div class="repository-sidebar">
+            
+
+<div class="repo-nav repo-nav-full js-repository-container-pjax js-octicon-loaders">
+  <div class="repo-nav-contents">
+    <ul class="repo-menu">
+      <li class="tooltipped leftwards" original-title="Code">
+        <a href="https://github.com/symphonycms/symphony-2" aria-label="Code" class="js-selected-navigation-item selected" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /symphonycms/symphony-2">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+        <li class="tooltipped leftwards" original-title="Issues">
+          <a href="https://github.com/symphonycms/symphony-2/issues" aria-label="Issues" class="js-selected-navigation-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /symphonycms/symphony-2/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">48</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+
+      <li class="tooltipped leftwards" original-title="Pull Requests"><a href="https://github.com/symphonycms/symphony-2/pulls" aria-label="Pull Requests" class="js-selected-navigation-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /symphonycms/symphony-2/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">2</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+
+        <li class="tooltipped leftwards" original-title="Wiki">
+          <a href="https://github.com/symphonycms/symphony-2/wiki" aria-label="Wiki" class="js-selected-navigation-item" data-pjax="true" data-selected-links="repo_wiki /symphonycms/symphony-2/wiki">
+            <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+
+
+    </ul>
+    <div class="repo-menu-separator"></div>
+    <ul class="repo-menu">
+
+      <li class="tooltipped leftwards" original-title="Pulse">
+        <a href="https://github.com/symphonycms/symphony-2/pulse" aria-label="Pulse" class="js-selected-navigation-item" data-pjax="true" data-selected-links="pulse /symphonycms/symphony-2/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Graphs">
+        <a href="https://github.com/symphonycms/symphony-2/graphs" aria-label="Graphs" class="js-selected-navigation-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /symphonycms/symphony-2/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Network">
+        <a href="https://github.com/symphonycms/symphony-2/network" aria-label="Network" class="js-selected-navigation-item js-disable-pjax" data-selected-links="repo_network /symphonycms/symphony-2/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+    </ul>
+
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+
+  <input type="text" class="clone js-url-field" value="https://github.com/symphonycms/symphony-2.git" readonly="readonly">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/symphonycms/symphony-2.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone">
+  <h3><strong>SSH</strong> clone URL</h3>
+
+  <input type="text" class="clone js-url-field" value="git@github.com:symphonycms/symphony-2.git" readonly="readonly">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="git@github.com:symphonycms/symphony-2.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+
+  <input type="text" class="clone js-url-field" value="https://github.com/symphonycms/symphony-2" readonly="readonly">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/symphonycms/symphony-2" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+    <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+    <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="js-clone-selector" data-protocol="ssh">SSH</a>,
+    <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="js-clone-selector" data-protocol="subversion">Subversion</a>,
+  and <a href="https://help.github.com/articles/which-remote-url-should-i-use">other methods.</a>
+</p>
+
+
+
+                <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+
+<div class="file-navigation">
+  
+
+
+<div class="select-menu js-menu-container js-select-menu">
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-master-branch="master" data-ref="master">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/devkits/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="devkits" data-skip-pjax="true" rel="nofollow" title="devkits">devkits</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/gh-pages/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="gh-pages" data-skip-pjax="true" rel="nofollow" title="gh-pages">gh-pages</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/integration/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="integration" data-skip-pjax="true" rel="nofollow" title="integration">integration</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/symphony-2 symphony lib toolkit at master · symphonycms symphony-2.html" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" data-skip-pjax="true" rel="nofollow" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/xmlelement/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="xmlelement" data-skip-pjax="true" rel="nofollow" title="xmlelement">xmlelement</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/xmlelement-2012/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="xmlelement-2012" data-skip-pjax="true" rel="nofollow" title="xmlelement-2012">xmlelement-2012</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/rev5/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="rev5" data-skip-pjax="true" rel="nofollow" title="rev5">rev5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3beta3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3beta3" data-skip-pjax="true" rel="nofollow" title="2.3beta3">2.3beta3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3beta2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3beta2" data-skip-pjax="true" rel="nofollow" title="2.3beta2">2.3beta2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3beta1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3beta1" data-skip-pjax="true" rel="nofollow" title="2.3beta1">2.3beta1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3RC4/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3RC4" data-skip-pjax="true" rel="nofollow" title="2.3RC4">2.3RC4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3RC3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3RC3" data-skip-pjax="true" rel="nofollow" title="2.3RC3">2.3RC3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3RC2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3RC2" data-skip-pjax="true" rel="nofollow" title="2.3RC2">2.3RC2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3RC1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3RC1" data-skip-pjax="true" rel="nofollow" title="2.3RC1">2.3RC1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3beta3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3beta3" data-skip-pjax="true" rel="nofollow" title="2.3.3beta3">2.3.3beta3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3beta2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3beta2" data-skip-pjax="true" rel="nofollow" title="2.3.3beta2">2.3.3beta2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3beta1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3beta1" data-skip-pjax="true" rel="nofollow" title="2.3.3beta1">2.3.3beta1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3RC3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3RC3" data-skip-pjax="true" rel="nofollow" title="2.3.3RC3">2.3.3RC3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3RC2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3RC2" data-skip-pjax="true" rel="nofollow" title="2.3.3RC2">2.3.3RC2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3RC1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3RC1" data-skip-pjax="true" rel="nofollow" title="2.3.3RC1">2.3.3RC1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.3" data-skip-pjax="true" rel="nofollow" title="2.3.3">2.3.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.2beta2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.2beta2" data-skip-pjax="true" rel="nofollow" title="2.3.2beta2">2.3.2beta2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.2beta1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.2beta1" data-skip-pjax="true" rel="nofollow" title="2.3.2beta1">2.3.2beta1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.2RC2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.2RC2" data-skip-pjax="true" rel="nofollow" title="2.3.2RC2">2.3.2RC2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.2RC1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.2RC1" data-skip-pjax="true" rel="nofollow" title="2.3.2RC1">2.3.2RC1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.2" data-skip-pjax="true" rel="nofollow" title="2.3.2">2.3.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1beta2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1beta2" data-skip-pjax="true" rel="nofollow" title="2.3.1beta2">2.3.1beta2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1beta1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1beta1" data-skip-pjax="true" rel="nofollow" title="2.3.1beta1">2.3.1beta1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1RC3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1RC3" data-skip-pjax="true" rel="nofollow" title="2.3.1RC3">2.3.1RC3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1RC2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1RC2" data-skip-pjax="true" rel="nofollow" title="2.3.1RC2">2.3.1RC2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1RC1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1RC1" data-skip-pjax="true" rel="nofollow" title="2.3.1RC1">2.3.1RC1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3.1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3.1" data-skip-pjax="true" rel="nofollow" title="2.3.1">2.3.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.3" data-skip-pjax="true" rel="nofollow" title="2.3">2.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.5RC1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.5RC1" data-skip-pjax="true" rel="nofollow" title="2.2.5RC1">2.2.5RC1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.5/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.5" data-skip-pjax="true" rel="nofollow" title="2.2.5">2.2.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.4/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.4" data-skip-pjax="true" rel="nofollow" title="2.2.4">2.2.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.3" data-skip-pjax="true" rel="nofollow" title="2.2.3">2.2.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.2" data-skip-pjax="true" rel="nofollow" title="2.2.2">2.2.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2.1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2.1" data-skip-pjax="true" rel="nofollow" title="2.2.1">2.2.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.2" data-skip-pjax="true" rel="nofollow" title="2.2">2.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.1.2.1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.1.2.1" data-skip-pjax="true" rel="nofollow" title="2.1.2.1">2.1.2.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.1.2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.1.2" data-skip-pjax="true" rel="nofollow" title="2.1.2">2.1.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.1.1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.1.1" data-skip-pjax="true" rel="nofollow" title="2.1.1">2.1.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.1.0/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.1.0" data-skip-pjax="true" rel="nofollow" title="2.1.0">2.1.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.7/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.7" data-skip-pjax="true" rel="nofollow" title="2.0.7">2.0.7</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.6/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.6" data-skip-pjax="true" rel="nofollow" title="2.0.6">2.0.6</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.5/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.5" data-skip-pjax="true" rel="nofollow" title="2.0.5">2.0.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.4/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.4" data-skip-pjax="true" rel="nofollow" title="2.0.4">2.0.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.3/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.3" data-skip-pjax="true" rel="nofollow" title="2.0.3">2.0.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.2/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.2" data-skip-pjax="true" rel="nofollow" title="2.0.2">2.0.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0.1/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0.1" data-skip-pjax="true" rel="nofollow" title="2.0.1">2.0.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/symphonycms/symphony-2/tree/2.0/symphony/lib/toolkit" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="2.0" data-skip-pjax="true" rel="nofollow" title="2.0">2.0</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/symphonycms/symphony-2" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">symphony-2</span></a></span></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/symphonycms/symphony-2/tree/master/symphony" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">symphony</span></a></span><span class="separator"> / </span><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">lib</span></a></span><span class="separator"> / </span><strong class="final-path">toolkit</strong><span class="separator"> / </span><form action="https://github.com/symphonycms/symphony-2/new/master/symphony/lib/toolkit" class="js-new-blob-form tooltipped rightwards new-file-link" method="post" original-title="Fork this project and create a new file"><span class="js-new-blob-submit octicon octicon-file-add"></span></form></div>
+
+  <p class="history-link">
+<a href="https://github.com/symphonycms/symphony-2/commits/master/symphony/lib/toolkit">      <span class="octicon octicon-history tooltipped" original-title="Browse commits for this branch"></span>
+      History
+</a>  </p>
+</div>
+
+
+
+<a href="https://github.com/symphonycms/symphony-2/find/master" data-hotkey="t" style="display:none" data-pjax="">Show File Finder</a>
+<div class="bubble files-bubble">
+  <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/symphonycms/symphony-2/commit/0d3a92709cef4c47f13bc006845afe927d1c90c2" class="message" data-pjax="true">Add utility functions to the HTMLPage class to modify the elements in…</a>
+        <span class="hidden-text-expander inline"><a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="js-details-target">…</a></span>
+    </p>
+      <div class="commit-desc"><pre>… the head before they are generated</pre></div>
+    <div class="commit-meta">
+      <span class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="0d3a92709cef4c47f13bc006845afe927d1c90c2" data-copied-hint="copied!" title="Copy SHA"><span class="octicon octicon-clippy"></span></span>
+      <a href="https://github.com/symphonycms/symphony-2/commit/0d3a92709cef4c47f13bc006845afe927d1c90c2" class="sha-block" data-pjax="">latest commit <span class="sha">0d3a92709c</span></a>
+
+      <div class="authorship">
+        <img class="gravatar" height="20" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/6be8e584a0f454ac2dc7600bdeaca7b7" width="20">
+        <span class="author-name"><a href="https://github.com/brendo" data-skip-pjax="true" rel="contributor">brendo</a></span>
+        authored <time class="js-relative-date updated" datetime="2013-07-12T04:04:17-07:00" title="2013-07-12 04:04:17">6 days ago</time>
+
+      </div>
+    </div>
+  </div><table class="files" data-pjax="">
+    <thead>
+
+        
+  
+
+    </thead>
+      <tbody><tr class="up-tree">
+        <td></td>
+        <td><a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib" rel="nofollow" title="Go to parent directory">..</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    
+</tbody><tbody class="" data-url="/symphonycms/symphony-2/file-list/master/symphony/lib/toolkit">
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit/cryptography" class="js-directory-link css-truncate-target" id="e0d00b9f337d357c6faa2f8ceae4a60d-708117955bffdb004edc9ba9567c8fa7e15c8e2a" title="cryptography">cryptography</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/4274fd09d6352453a6739bffb9bcdde8c14ce71a" class="message" data-pjax="true">Further fixes for noteices on the Update script</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-17T13:43:41-08:00" title="2012-12-17 13:43:41">7 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit/data-sources" class="js-directory-link css-truncate-target" id="caabcbd96e8ea30ae7eb984799de4429-f8d5fbb2a2445766a26c217876a6636deaff5b19" title="data-sources">data-sources</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/77c0bc040565b87e0fd9cc4cba0075ec090dc8d8" class="message" data-pjax="true">Replace all references to the old domain to our new domain :). Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1782" class="issue-link" title="Core extensions&#39; authors link is broken">#…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-07-01T06:20:57-07:00" title="2013-07-01 06:20:57">17 days ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit/email-gateways" class="js-directory-link css-truncate-target" id="102c2f63b8e4c9299d803dbf67c69858-05573f5beb189b5798596899f1f16a14be4a018b" title="email-gateways">email-gateways</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/bff667a07b420284b6d8d976f1f38d59a1573ae3" class="message" data-pjax="true">Whitespace cleanup.</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-10-06T02:21:07-07:00" title="2012-10-06 02:21:07">10 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit/events" class="js-directory-link css-truncate-target" id="16908b0605f2645dfcb4c3a8d248cef3-3cb8bb152d69a01221ef7352b7263b0d6832d76c" title="events">events</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/77c0bc040565b87e0fd9cc4cba0075ec090dc8d8" class="message" data-pjax="true">Replace all references to the old domain to our new domain :). Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1782" class="issue-link" title="Core extensions&#39; authors link is broken">#…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-07-01T06:20:57-07:00" title="2013-07-01 06:20:57">17 days ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit/fields" class="js-directory-link css-truncate-target" id="d05b6ed7d2345020440df396d6da7f73-6733548f5ee1e335216967ba4f639b7768ee9f3d" title="fields">fields</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/77c0bc040565b87e0fd9cc4cba0075ec090dc8d8" class="message" data-pjax="true">Replace all references to the old domain to our new domain :). Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1782" class="issue-link" title="Core extensions&#39; authors link is broken">#…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-07-01T06:20:57-07:00" title="2013-07-01 06:20:57">17 days ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.administrationpage.php" class="js-directory-link css-truncate-target" id="49d3419990997ffb58bddc9ddbb3d23d-443f568e5a202aa79793113774abef6bc613a052" title="class.administrationpage.php">class.administrationpage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/3835d09322e889c405d53b43bb1eee8ab4fbd60d" class="message" data-pjax="true">Add jQuery 2.0. Remove jQuery 1.9/Migrate plugin. Closes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1701" class="issue-link" title="Remove jQuery Migration Plugin">#1701</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-05T03:53:10-07:00" title="2013-05-05 03:53:10">2 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.ajaxpage.php" class="js-directory-link css-truncate-target" id="eb7bf4072099e4bb7594c9d2a3637904-e9e9570afbc08820059876454d7cb90aa465fba0" title="class.ajaxpage.php">class.ajaxpage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/0eed2c9e88a26cecd3267eb696eafeb4a9d9e0a2" class="message" data-pjax="true">Fix some strict/deprecated warnings. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1613" class="issue-link" title="Symphony 2.3.2beta1 (integration) install error (PHP 5.4.6)">#1613</a><a href="https://github.com/symphonycms/symphony-2/commit/0eed2c9e88a26cecd3267eb696eafeb4a9d9e0a2" class="message" data-pjax="true">,</a> <a href="https://github.com/symphonycms/symphony-2/issues/1614" class="issue-link" title="Symphony 2.3.2beta1 (integration) installation page error (PHP 5.3.19)">#1614</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-21T14:50:04-08:00" title="2013-01-21 14:50:04">6 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.alert.php" class="js-directory-link css-truncate-target" id="ad073435bacd8918edfc16a7da2cdb48-c2f558aa5d1676e248274a563bd82270c9d2d64b" title="class.alert.php">class.alert.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/2d5fbf591c1632f40db0a6e83a19c5494b32bbe3" class="message" data-pjax="true">Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1586" class="issue-link" title="Integration broken">#1586</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-27T15:34:53-08:00" title="2012-12-27 15:34:53">7 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.author.php" class="js-directory-link css-truncate-target" id="04a02af761a2f502da3cb8296edeba36-8279e51421aab748c7cd4a00b68c0cdf7a524f4f" title="class.author.php">class.author.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/af99af5f37f907b7a8f6fdc9bb2eac7c78fc35d1" class="message" data-pjax="true">Update to correct release version</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-25T06:32:09-07:00" title="2013-03-25 06:32:09">4 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.authormanager.php" class="js-directory-link css-truncate-target" id="9f1e67b5c3251c74d0b3c552db3be8c4-d07df76c29b12b2ef0f35ffdbe4b0409a3db5bbb" title="class.authormanager.php">class.authormanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/6c8aa4e9c810994f7632837487426867ce50f468" class="message" data-pjax="true">Fix potential autheticated SQL injection attack on the Authors page</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-20T06:02:43-07:00" title="2013-03-20 06:02:43">4 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.cryptography.php" class="js-directory-link css-truncate-target" id="42cfc5c9932468fc1ca42c12f160c9b2-435b55975d1ff2e1b5b388b3dff9a1f6e3237732" title="class.cryptography.php">class.cryptography.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/ed99609d03a2c2b875182e9ecd11b6fac0d14865" class="message" data-pjax="true">Documentation updates, variable fixes, code cleanup</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-25T04:18:36-08:00" title="2012-12-25 04:18:36">7 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.datasource.php" class="js-directory-link css-truncate-target" id="7584f7c00a3a05a5e17c392c6f6ece78-0e3dcc61ee4358b5eccba7d7396adb953879925b" title="class.datasource.php">class.datasource.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/d9e920ba3fc2aed8d83580bbc96247ce3c1c6675" class="message" data-pjax="true">If a filter with an AND or OR operation contains no actual filtering …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-27T06:07:00-07:00" title="2013-05-27 06:07:00">2 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.datasourcemanager.php" class="js-directory-link css-truncate-target" id="01c105bd62b9857a8d5a97fd2b409e9a-de12202c58639283700f8f86badb8ab6a4eb4ffe" title="class.datasourcemanager.php">class.datasourcemanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/090e9c9cc1a015625b9ce2a613dbbd55d00d4157" class="message" data-pjax="true">Fixes for initialising the Datasources/Events using Reflection</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-21T18:06:34-08:00" title="2012-12-21 18:06:34">7 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.devkit.php" class="js-directory-link css-truncate-target" id="c74aceb09144bbb7fc89c7f0050630bc-27ba7c1cf9ac6ce32bf4b1a420d9f8cb343352df" title="class.devkit.php">class.devkit.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/f8539fc399bbd50f44a536aaee2af95094cc941a" class="message" data-pjax="true">Another round of fixing E_STRICT notices for PHP5.4. Tracking latest …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-02-03T00:45:30-08:00" title="2013-02-03 00:45:30">6 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.email.php" class="js-directory-link css-truncate-target" id="7eac0518d13fdea226d83e7ff96ac905-7a6668473a86d5390e7fcad9b6d68d33d7b6db0e" title="class.email.php">class.email.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/c191ad52f9c2a1ff37acc41c81a22f202e6dc5f8" class="message" data-pjax="true">Eliminate documentation gotchas in the email core functions. (Make it…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2011-04-13T07:46:59-07:00" title="2011-04-13 07:46:59">2 years ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.emailgateway.php" class="js-directory-link css-truncate-target" id="8405a4ab73300497cc3b79cdf1f8f733-839ad08e4b2afd2fce22c11ff623d7d8a7e61b3c" title="class.emailgateway.php">class.emailgateway.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/3e87b39fbe4a3ee29111740ea1f62bafa61dc73d" class="message" data-pjax="true">Don't trust email server response. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1770" class="issue-link" title="Sending an email may break XSLT transformation">#1770</a><a href="https://github.com/symphonycms/symphony-2/commit/3e87b39fbe4a3ee29111740ea1f62bafa61dc73d" class="message" data-pjax="true">.</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-06-10T08:09:35-07:00" title="2013-06-10 08:09:35">a month ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.emailgatewaymanager.php" class="js-directory-link css-truncate-target" id="7347317bde8a9867ff407da5bab4db1c-ce6b29b9c96b706ba3cd3f570e32c0f0c6c33a54" title="class.emailgatewaymanager.php">class.emailgatewaymanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/403c310db3233ffdd2f4fd086106af45746aff74" class="message" data-pjax="true">Enforce lowercase when loading Email Gateway's. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1695" class="issue-link" title="Email Gateways and Case Sensitiveness  ">#1695</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-23T16:51:21-07:00" title="2013-03-23 16:51:21">4 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.emailhelper.php" class="js-directory-link css-truncate-target" id="f9a3631ea35bbb6d5407e7864054e95e-413888862e462a92e2ae74abdf8bd7e1f477e50c" title="class.emailhelper.php">class.emailhelper.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/da1fd387e2a02f59d38d82ba3f2bd83f3efc15c6" class="message" data-pjax="true">Use General::getMimeType to determine uploaded file mimetype instead …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-27T06:20:51-07:00" title="2013-05-27 06:20:51">2 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.entry.php" class="js-directory-link css-truncate-target" id="cb1d44095a03dece061396af8941680a-d5b0f10dcd03cf89b1f3551b11d47b56df695abf" title="class.entry.php">class.entry.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/78a2c8a73a09fb58abd6243d4d7666f994328fb1" class="message" data-pjax="true">Publish area notice fixes</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-17T13:43:42-08:00" title="2012-12-17 13:43:42">7 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.entrymanager.php" class="js-directory-link css-truncate-target" id="805ac9804b6a8068a734848d388b2084-eee9568078cf5ef3e33639b619d834f82198c406" title="class.entrymanager.php">class.entrymanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/db2111ea47966ef5b89f06d5c1ae8a34a0e99a92" class="message" data-pjax="true">Prevent error when deleting entries that don't exist or are partially…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-04-09T23:13:42-07:00" title="2013-04-09 23:13:42">3 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.event.php" class="js-directory-link css-truncate-target" id="835f75c548a783c91d37e1d57da95242-d38e669914621c01a2cfbb3902076d4862fe8c0d" title="class.event.php">class.event.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/038c68fe21456c71830690e84f6de734b9015ad4" class="message" data-pjax="true">First implementation of Providers for Events</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-08-18T18:33:24-07:00" title="2012-08-18 18:33:24">11 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.eventmanager.php" class="js-directory-link css-truncate-target" id="23a21c4ca7d8ade2fbfb544820724802-a1c9b284229878ade401e9870d3f5f174a2c0d80" title="class.eventmanager.php">class.eventmanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/d79432a37d2a8fc9e658c880499e2ab5555c70ee" class="message" data-pjax="true">Improve the class loading. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1620" class="issue-link" title="Erreur HTTP 500">#1620</a> <a href="https://github.com/symphonycms/symphony-2/commit/d79432a37d2a8fc9e658c880499e2ab5555c70ee" class="message" data-pjax="true">(This should be replaced by im…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-23T01:46:07-08:00" title="2013-01-23 01:46:07">6 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.extension.php" class="js-directory-link css-truncate-target" id="c5cb78772429101b76df368242fdb263-5a4808886d614121f5d84d1f133244fe926af5c2" title="class.extension.php">class.extension.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/3fb63f1fd310f83281d96a28ef0f09e29754fb82" class="message" data-pjax="true">Updated the extension doc</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-13T17:24:21-08:00" title="2013-01-13 17:24:21">6 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.extensionmanager.php" class="js-directory-link css-truncate-target" id="45a04d102b843502c8af1ddf319592f2-fa059a4a8f91eb943993a5fa42f37cf098615c8d" title="class.extensionmanager.php">class.extensionmanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/71a3df19425b0e97f7998835b5c4b99e2e0e0b5d" class="message" data-pjax="true">Fix handling of Missing Extensions exception. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1647" class="issue-link" title="Extensions page gives error Symphony Warning">#1647</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-02-20T16:31:31-08:00" title="2013-02-20 16:31:31">5 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.field.php" class="js-directory-link css-truncate-target" id="e1f1a163d5b9b74c6439f8a0c65e61c3-9a5eef338223be6924a8b679cf314743b6bfa889" title="class.field.php">class.field.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/9fc994dbcb02c412a30224603ca312696e06acc3" class="message" data-pjax="true">Documentation typo, use built in PHP function</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-02-02T22:35:40-08:00" title="2013-02-02 22:35:40">6 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.fieldmanager.php" class="js-directory-link css-truncate-target" id="c9f26a83793a544cd0bfba5d00a350ee-663343c60a736c7854f0c36ff25d878e747ed4cc" title="class.fieldmanager.php">class.fieldmanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/d79432a37d2a8fc9e658c880499e2ab5555c70ee" class="message" data-pjax="true">Improve the class loading. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1620" class="issue-link" title="Erreur HTTP 500">#1620</a> <a href="https://github.com/symphonycms/symphony-2/commit/d79432a37d2a8fc9e658c880499e2ab5555c70ee" class="message" data-pjax="true">(This should be replaced by im…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-23T01:46:07-08:00" title="2013-01-23 01:46:07">6 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.frontendpage.php" class="js-directory-link css-truncate-target" id="40e19730371eb77f202e1a3f81595ad5-efcd7e40fc74d87058094dd7ccde158724f5d5b1" title="class.frontendpage.php">class.frontendpage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/e631d85a1ee013eff6e2c6a561aadc0aa44c70be" class="message" data-pjax="true">Various E_STRICT error fixes</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-10T22:08:11-07:00" title="2013-05-10 22:08:11">2 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.gateway.php" class="js-directory-link css-truncate-target" id="ca8eef51077074e614a2484905e453cc-e8c242a03aa8f77f0d91097732e9ed93d4cb757f" title="class.gateway.php">class.gateway.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/b572e9d9a049fbd1119184966a6ee85595c7453e" class="message" data-pjax="true">Correct Gateway class so that it uses the user defined timeout variab…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-24T07:14:01-07:00" title="2013-03-24 07:14:01">4 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.general.php" class="js-directory-link css-truncate-target" id="416d5c96c03cb26fad45fed023df300e-498ec7c14dfad831229c8a005d12d182aa1562f5" title="class.general.php">class.general.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/da1fd387e2a02f59d38d82ba3f2bd83f3efc15c6" class="message" data-pjax="true">Use General::getMimeType to determine uploaded file mimetype instead …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-27T06:20:51-07:00" title="2013-05-27 06:20:51">2 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.htmlpage.php" class="js-directory-link css-truncate-target" id="0f4dcf085164416bbec7400bbc573aa6-09d0c982a42f07557a6c77c0b000c456f97a7b7d" title="class.htmlpage.php">class.htmlpage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/0d3a92709cef4c47f13bc006845afe927d1c90c2" class="message" data-pjax="true">Add utility functions to the HTMLPage class to modify the elements in…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-07-12T04:04:17-07:00" title="2013-07-12 04:04:17">6 days ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.json.php" class="js-directory-link css-truncate-target" id="4e73ae9721818bd18709c40659277558-7c33c800086eed505678de99b4eb175ff8d0c5b8" title="class.json.php">class.json.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/f97c803ae6cd29166e9b2bb88d6b5349791d2eac" class="message" data-pjax="true">Fix syntax error introduced in previous JSON fix</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-05-04T07:49:09-07:00" title="2012-05-04 07:49:09">a year ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.lang.php" class="js-directory-link css-truncate-target" id="11c4c2960f405a6c825190be67731bcd-bbf4fddb2cf768f2cce7c9638617ecaf8ec715a7" title="class.lang.php">class.lang.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/1e74c061a9acfd9826823c3e0857f0b07320d06e" class="message" data-pjax="true">Don't rely on Exceptions to be thrown when finding Language classes, …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-04T00:53:39-08:00" title="2013-03-04 00:53:39">5 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.mutex.php" class="js-directory-link css-truncate-target" id="a504cbd2d9ba9e70153dfa69251ad0a9-448385f228dce455877cd5dc8f8c7ef6325b6930" title="class.mutex.php">class.mutex.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/058078fa20d6950aaf812a098d702d50c509d9e2" class="message" data-pjax="true">Make errorHandler check with isEnabled before throwing an Exception. …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-03-02T22:33:26-08:00" title="2012-03-02 22:33:26">a year ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.mysql.php" class="js-directory-link css-truncate-target" id="e0c1b9a88ed20d0cc3b1b8b75b4d4eeb-969330650064811f06bc9a1973442aca6f36093b" title="class.mysql.php">class.mysql.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/b00d669d24310daf41e4b1397cbc0e64abacd4c4" class="message" data-pjax="true">Add DROP to the list of MySQL operations that determine a WRITE_OPERA…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-04-29T05:46:26-07:00" title="2013-04-29 05:46:26">3 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.page.php" class="js-directory-link css-truncate-target" id="800a917fe3bf2705eaa7629aac2bbbbf-b4ffd0f6820709c22afd5734b30a45ec27b3b62e" title="class.page.php">class.page.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/2a2d1c9e10a79cf84c81d5a931554a068f366f11" class="message" data-pjax="true">Actually use the constants in the HTTP_STATUSES array instead of fuzz…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-21T02:28:39-08:00" title="2013-01-21 02:28:39">6 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.pagemanager.php" class="js-directory-link css-truncate-target" id="fa0dd84cc5f056b0548e2be42fac9d72-3b8074f51e01ecae21239da45ababb7b447828a3" title="class.pagemanager.php">class.pagemanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/928cedb72bfce29301fa82cb37d08e2a4cd4ca82" class="message" data-pjax="true">Correctly recurse through page children when updating template files …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-08T23:11:49-08:00" title="2012-12-08 23:11:49">7 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.profiler.php" class="js-directory-link css-truncate-target" id="3b254e85681fa88cc89e08e7a5ce5434-cdb15e8f941cb7ba72950c6419aac648490336a5" title="class.profiler.php">class.profiler.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/076784b156e313288ecfb8732cbfe91043068897" class="message" data-pjax="true">Documentation consistency update. Part 2: toolkit/</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2010-12-17T20:17:54-08:00" title="2010-12-17 20:17:54">3 years ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.resourcemanager.php" class="js-directory-link css-truncate-target" id="398297000b1e98f622232143810aab6e-a28897761a50dfc2354bb8363a870707687bfa13" title="class.resourcemanager.php">class.resourcemanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/ed99609d03a2c2b875182e9ecd11b6fac0d14865" class="message" data-pjax="true">Documentation updates, variable fixes, code cleanup</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-25T04:18:36-08:00" title="2012-12-25 04:18:36">7 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.resourcespage.php" class="js-directory-link css-truncate-target" id="a2bee64c37a4c3f21868c2cb8668c86f-03708fc151b75a426870f31b50cd357ed5d48963" title="class.resourcespage.php">class.resourcespage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/f10ec611f90066f2978fbc811cc6b8f383aa242d" class="message" data-pjax="true">The CustomActions delegate now passes along the selected rows and is …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-03-03T02:55:29-08:00" title="2013-03-03 02:55:29">5 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.section.php" class="js-directory-link css-truncate-target" id="77e49a7cc033fd31cc72383fa891bca9-2b0424d174cce35691cd089abbfd64ffff63628f" title="class.section.php">class.section.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/3c695fe30cc0655e549beb8c6edc864154d3df1b" class="message" data-pjax="true">Fixes for Associations to handle when no associations exist, when the…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-04-15T18:20:45-07:00" title="2013-04-15 18:20:45">3 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.sectionmanager.php" class="js-directory-link css-truncate-target" id="ef0a83ea8e16f6ea9dabb6ecf229c4a3-4c68777416fc3b2417ccc6dd0b681a4ded56a70c" title="class.sectionmanager.php">class.sectionmanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/46e4a40d47758485dc8d76fd60d04be6fe674faf" class="message" data-pjax="true">Delete both sides of an Assocation when a field is being deleted. Fix…</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-04-29T06:16:08-07:00" title="2013-04-29 06:16:08">3 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.smtp.php" class="js-directory-link css-truncate-target" id="ac5c95a7c256b389656048bd46dc2985-5e245104d0f1a70d83d3b810758a9695a37fd843" title="class.smtp.php">class.smtp.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/ed99609d03a2c2b875182e9ecd11b6fac0d14865" class="message" data-pjax="true">Documentation updates, variable fixes, code cleanup</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-12-25T04:18:36-08:00" title="2012-12-25 04:18:36">7 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.textformatter.php" class="js-directory-link css-truncate-target" id="b3c9223712b925b017f4c333d87dfb4f-c3e444bb6aacdba1197257cfa70b848bc4739eb3" title="class.textformatter.php">class.textformatter.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/28b8521585cc9a10f7ac9184ebe986c3848be60b" class="message" data-pjax="true">Good riddance _Parent. This will break older extensions that haven't …</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2011-08-23T04:17:30-07:00" title="2011-08-23 04:17:30">2 years ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.textformattermanager.php" class="js-directory-link css-truncate-target" id="a4ba8b49473bcec55412d2eec6916eb8-59f6fa295cfdf948140fe3cbb08869dd151e89b8" title="class.textformattermanager.php">class.textformattermanager.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/d55270106ea9aa91fcc5e5be69e0e2ad0d84f591" class="message" data-pjax="true">Various fixes from the static code analysis automation tool, HHVM</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-05T22:16:17-07:00" title="2013-05-05 22:16:17">2 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.widget.php" class="js-directory-link css-truncate-target" id="a3efd0b295837a9fde6e09b4a5386368-09a1b4a6cb897e832b8fa9135c45e995cbddce15" title="class.widget.php">class.widget.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/e631d85a1ee013eff6e2c6a561aadc0aa44c70be" class="message" data-pjax="true">Various E_STRICT error fixes</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-05-10T22:08:11-07:00" title="2013-05-10 22:08:11">2 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.xmlelement.php" class="js-directory-link css-truncate-target" id="170ff7499f2150081cd522d2ad33772e-d161ec8d38b4755e8d906c567b81bb39dcbedf1d" title="class.xmlelement.php">class.xmlelement.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/94cad3419bb15f7ca48f950ce855a3ec8f6c6b38" class="message" data-pjax="true">Add XMLElement-&gt;setName method. Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1603" class="issue-link" title="Set XMLElement name property">#1603</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-15T03:22:45-08:00" title="2013-01-15 03:22:45">6 months ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.xsltpage.php" class="js-directory-link css-truncate-target" id="577673393c72326e80dcefe30f4055b2-a9ce5a05bf9b41d46a671332b23ecc2a59a7029a" title="class.xsltpage.php">class.xsltpage.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/64f9729e74a94c337e5150a06a812cdb64aed872" class="message" data-pjax="true">Fix calls to Symphony::instance(), this should be Symphony::Engine()</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2013-01-31T01:23:07-08:00" title="2013-01-31 01:23:07">6 months ago</time></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/class.xsltprocess.php" class="js-directory-link css-truncate-target" id="281f24ff11630637373ed1c713d41937-4e042d6c01782ff0954b0e1f5522ec6dff5e4ced" title="class.xsltprocess.php">class.xsltprocess.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/6cc73ab703b1ab4d6cb9fbc6259590f4f6555411" class="message" data-pjax="true">Documentation updates</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-03-25T07:17:48-07:00" title="2012-03-25 07:17:48">a year ago</time></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" height="16" src="./symphony-2 symphony lib toolkit at master · symphonycms symphony-2_files/octocat-spinner-32.gif" width="16">
+      </td>
+      <td class="content">
+        <a href="https://github.com/symphonycms/symphony-2/blob/master/symphony/lib/toolkit/util.validators.php" class="js-directory-link css-truncate-target" id="d69cfb60941ec1fdb777261f967ee4cb-04813d194f83e03458e533ff618a3c22b1be5149" title="util.validators.php">util.validators.php</a>
+      </td>
+      <td class="message">
+        <a href="https://github.com/symphonycms/symphony-2/commit/1fb438e536344c7e5188b713e23ffd737234b02a" class="message" data-pjax="true">Fixes</a> <a href="https://github.com/symphonycms/symphony-2/issues/1379" class="issue-link" title="URLS with `?` fail validation">#1379</a>
+      </td>
+      <td class="age"><time class="js-relative-date" datetime="2012-07-04T01:58:00-07:00" title="2012-07-04 01:58:00">a year ago</time></td>
+    </tr>
+</tbody>
+
+  </table>
+</div>
+
+  
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2013 <span title="0.13668s from fe17.rs.github.com">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/symphonycms/symphony-2/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" original-title="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="theme-switcher js-theme-switcher tooltipped leftwards" original-title="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="https://github.com/symphonycms/symphony-2/tree/master/symphony/lib/toolkit#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+    
+  
+
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" data-clipboard-ready="true" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" original-title="">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.swf?nocache=1374184662191">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedDomain=github.com">         <embed src="https://github.global.ssl.fastly.net/flash/ZeroClipboard.swf?nocache=1374184662191" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedDomain=github.com" scale="exactfit">                </object></div></body></html>
