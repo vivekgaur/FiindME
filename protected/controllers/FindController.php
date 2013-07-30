@@ -339,12 +339,10 @@ class FindController extends Controller
 
     private function _convertDateToMysql($str_time)
     {
-      echo "INSIDE";
       $tdate = date("Y-m-d");
       $tdate = $tdate . " ";
       //add Sec
       $tdate = $tdate . $str_time . ":" . "00";
-      echo $tdate;
       return $tdate;      
     }
 }
