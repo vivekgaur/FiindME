@@ -40,13 +40,16 @@ class FindController extends Controller
       if(empty($models)) {
         // No
         $this->_sendResponse(200, 
-			     sprintf('No items where found for model <b>%s</b>', $_GET['model']) );
+			     sprintf('No items were found for model <b>%s</b>', $_GET['model']) );
       } else {
 
         // Prepare response
         $rows = array();
-        foreach($models as $model)
-	  $rows[] = $model->attributes;
+        foreach($models as $model){
+	  if($model->status == "Available"){
+	    $rows[] = $model->attributes;
+	  }
+	}
         // Send the response
         $this->_sendResponse(200, CJSON::encode($rows));
       }
@@ -88,6 +91,7 @@ class FindController extends Controller
         $this->_sendResponse(200,$xml);
       }
     }
+
 
     //GET: To view the deals by a specific merchant
     //URL http://localhost/~vgaur/fiindme/index.php/find/deal/merchant/4
@@ -206,21 +210,19 @@ class FindController extends Controller
 			     sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.",
 				     $_GET['model'], $_GET['id']) );
  
-      // Try to assign PUT parameters to attributes
-      /*foreach($put_vars as $var=>$value) {
-       // Does model have this attribute? If not, raise an error
-       if($model->hasAttribute($var))
-       $model->$var = $value;
-       else {
-       $this->_sendResponse(500, 
-       sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>',
-       $var, $_GET['model']) );
-       }
-       }*/
+      
+      //Check if request is available or not
+      if($model->status != "Available"){
+	$this->_sendResponse(400, 
+			     sprintf("Deal with ID <b>%s</b> is no longer available.",
+				     $_GET['id']) );
+
+      }
+      
       // Set the Deal status to "SOLD"
       $model->status = "SOLD";
 
-      $deal_merchant = array();
+    $deal_merchant = array();
     $user_code = rand(100,999);
     //echo $user_code;
     $merchant_code = rand(100,999);
@@ -250,7 +252,87 @@ class FindController extends Controller
         // see actionCreate
         // ...
         $this->_sendResponse(500, $msg );
+    }//actionUpdate
+
+    //PUT: confirm the deal. change the status to confirmed
+    // Merchant needs to enter the code for the user.
+    // tbl_deal_business_user to verify
+    // URL http://localhost/~vgaur/fiindme/index.php/find/deal/merchant/id/code
+    public function actionConfirm()
+    {
+      //Parse the PUT parameters
+      $json = file_get_contents('php://input');
+      
+      $put_vars = CJSON::decode($json,true);  //true means use associative array
+      
+      switch($_GET['model'])
+	{
+	  // Find respective model
+        case 'deal':
+	  $model = Deal::model()->findByPk($_GET['id']);                    
+	  break;
+        default:
+	  $this->_sendResponse(501, 
+			       sprintf( 'Error: Mode <b>update</b> is not implemented for model <b>%s</b>',
+					$_GET['model']) );
+	  Yii::app()->end();
+	}
+      // Did we find the requested model? If not, raise an error
+      if($model === null){
+        $this->_sendResponse(400, 
+			     sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.",
+				     $_GET['model'], $_GET['id']) );
+      }
+      
+      if($model->status != "SOLD"){
+	$msg = "<h1>Error</h1>";
+	$msg .= sprintf("Couldn't confirm the deal <b>%d</b> Deal is not yet SOLD!!", $_GET['id']);
+	$msg .= "<ul>";
+	$this->_sendResponse(400, $msg);
+      }
+
+      $user_code = $_GET['code'];
+
+
+
+      //Future want to check if merchant confirming the code is same as the creating one
+    $merchant = Merchant::model()->findByPk($model->merchant_id_fk);
+    
+    //SQL Query
+    $sql = "SELECT * FROM tbl_deal_business_user WHERE deal_id_fk = :deal_id";
+
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(":deal_id",$_GET['id'], PDO::PARAM_INT);
+    $rows = $command->query();
+    $table_user_code = "";
+    foreach($rows as $row){
+      $table_user_code = $row['user_code'];      
+      echo $table_user_code;
     }
+
+    echo $table_user_code;
+    if($table_user_code == $user_code){
+      // Set the Deal status to "CONFIRMED"
+      $model->status = "CONFIRMED";
+      // Try to save the model
+      if($model->save()){
+	$msg = "<h1>Congratulations</h1>";
+	$msg .= sprintf("Deal <b>%d</b> confirmed successfully", $_GET['id']);
+	$msg .= "<ul>";
+	$this->_sendResponse(200, $msg);
+      }
+    }
+    else
+        // prepare the error $msg
+        // see actionCreate
+        // ...
+      // Errors occurred
+      $msg = "<h1>Error</h1>";
+    $msg .= sprintf("Couldn't confirm the deal <b>%d</b> user_code %d table_code %s", $_GET['id'],$user_code,$table_user_code);
+      $msg .= "<ul>";
+      $this->_sendResponse(500, $msg );
+    }//actionConfirm
+
     public function actionDelete()
     {
     }
@@ -333,6 +415,7 @@ class FindController extends Controller
 		     404 => 'Not Found',
 		     500 => 'Internal Server Error',
 		     501 => 'Not Implemented',
+		     502 => 'Not Available',
 		     );
       return (isset($codes[$status])) ? $codes[$status] : '';
     }

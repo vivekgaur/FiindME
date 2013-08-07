@@ -195,5 +195,40 @@ class Deal extends CActiveRecord
 	    }*/
 	  return $result;
 	}
+	public function findByUserCriteria($zip_code,$start_time,$category)
+	{
+	  $sql = "SELECT * FROM tbl_deal WHERE status = :status AND start_time > :start_time AND category = :category AND merchant_id_fk IN
+	    (SELECT merchant_id FROM tbl_merchant WHERE contact_id_fk  IN
+	     (SELECT  contact_id FROM tbl_contact WHERE address_id_fk  IN 
+	      (SELECT  address_id FROM tbl_address WHERE zip_code_id_fk IN 
+	       (SELECT zipcode_id FROM tbl_zipcode WHERE zip_code = :zip_code
+		)
+	       )
+	      )
+	     ) ORDER BY create_time DESC";
+	  /*
+	  $sql = "SELECT * FROM `tbl_deal` WHERE `merchant_id_fk` IN
+	    (SELECT `merchant_id` FROM `tbl_merchant` WHERE `contact_id_fk`  IN
+	     (SELECT  `contact_id` FROM `tbl_contact` WHERE `address_id_fk`  IN 
+	      (SELECT  `address_id` FROM `tbl_address` WHERE `zip_code_id_fk` IN 
+	       (SELECT `zipcode_id` FROM `tbl_zipcode` WHERE `zip_code` = :zip_code
+
+		)
+	       )
+	      )
+	     ) LIMIT 0 , 30"
+	  */
+	  $status = "Available";
+	  $result = Deal::model()->findAllBySql($sql,array(":status"=>$status, ":start_time"=>$start_time,":category"=>$category,":zip_code"=>$zip_code));
+	  #$command = Yii::app()->db->createCommand($sql);
+	  #$command->bindValue(":zip_code",$zip_code, PDO::PARAM_INT);
+	  #$results = $command->queryRow();
+	  $rows = array();
+	  /*foreach($result as $deal){
+	    $mer = Merchant::model()->findByPk($deal->merchant_id_fk);
+	    echo $mer->contactIdFk->first_name;
+	    }*/
+	  return $result;
+	}
 
 }
