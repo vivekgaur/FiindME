@@ -151,9 +151,7 @@ class FindController extends Controller
         if($model->hasAttribute($var)){
 	  if(($var === "start_time") || ($var === "end_time")){
 	    //Check for the date format if needed convert
-	    if(substr_count($value,"-") == 0){
-	      $value = $this->_convertDateToMysql($value);
-	    }
+	    $value = $this->_convertDateToMysql($value);
 	  }
 	  $model->$var = $value;
 	}
