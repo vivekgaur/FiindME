@@ -150,7 +150,10 @@ class FindController extends Controller
         // Does the model have this attribute? If not raise an error
         if($model->hasAttribute($var)){
 	  if(($var === "start_time") || ($var === "end_time")){
-	    $value = $this->_convertDateToMysql($value);
+	    //Check for the date format if needed convert
+	    if(substr_count($value,"-") == 0){
+	      $value = $this->_convertDateToMysql($value);
+	    }
 	  }
 	  $model->$var = $value;
 	}
@@ -422,6 +425,10 @@ class FindController extends Controller
 
     private function _convertDateToMysql($str_time)
     {
+      if(substr_count($value,"-") > 0){
+	//Date is already there do not add new one
+	return $str_time;
+      }
       $tdate = date("Y-m-d");
       $tdate = $tdate . " ";
       //add Sec
