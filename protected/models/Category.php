@@ -87,4 +87,15 @@ class Category extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function findByCategoryString($category)
+	{
+	  $sql = "SELECT * FROM tbl_category WHERE Name = :category";
+	  $rows = Category::model()->findAllBySql($sql,array(":category"=>$category));
+	  
+	  foreach($rows as $row){
+	    //Return the first category
+	    return $row['category_id'];
+	  }
+	    
+	}
 }

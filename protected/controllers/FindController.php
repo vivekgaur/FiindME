@@ -18,40 +18,93 @@ class FindController extends Controller
  
     // Actions
     public function actionList()
-    {
-      // Get the respective model instance
-      // URL http://localhost/~vgaur/fiindme/index.php/find/deal
-      switch($_GET['model'])
-	{
-        case 'deal':
-	  $criteria = new CDbCriteria();
-	  $criteria->limit=10;
-	  $models = Deal::model()->findAll($criteria);
-	  break;
-        default:
-	  // Model not implemented error
-	  $this->_sendResponse(501, sprintf(
-					    'Error: Mode <b>list</b> is not implemented for model <b>%s</b>',
-					    $_GET['model']) );
-	  Yii::app()->end();
-	}
-
-      // Did we get some results?
-      if(empty($models)) {
-        // No
-        $this->_sendResponse(200, 
-			     sprintf('No items were found for model <b>%s</b>', $_GET['model']) );
-      } else {
-
-        // Prepare response
-        $rows = array();
-        foreach($models as $model){
-	  if($model->status == "Available"){
-	    $rows[] = $model->attributes;
+    {      
+      $number =  count($_GET);
+      $category = "";
+      $zip_code = 0;
+      $start_time = "";
+      $mysql_start_time = "";
+      if($number == 4 ){
+	foreach($_GET as $var=>$value) {
+	  if($var === "category"){
+	    $category = urldecode($value);
+	  }
+	  else if($var === "id"){
+	    $zip_code = urldecode($value);
+	  }
+	  else if($var === "start_time"){
+	    $start_time = urldecode($value);
 	  }
 	}
-        // Send the response
-        $this->_sendResponse(200, CJSON::encode($rows));
+	$mysql_start_time = $this->_convertDateToMysql($start_time);
+	switch($_GET['model'])
+	  {
+	  case 'deal':
+	    $criteria = new CDbCriteria();
+	    $criteria->limit=10;
+	    $models = Deal::model()->findByUserCriteria($zip_code,$mysql_start_time,$category);
+	    break;
+	  default:
+	    // Model not implemented error
+	    $this->_sendResponse(501, sprintf(
+					      'Error: Mode <b>list</b> is not implemented for model <b>%s</b>',
+					      $_GET['model']) );
+	    Yii::app()->end();
+	  }
+        // Did we get some results?
+	if(empty($models)) {
+	  // No
+	  echo "Empty";
+	  $this->_sendResponse(200, 
+			       sprintf('No items were found for model <b>%s</b>', $_GET['model']) );
+	} else {
+	  
+	  // Prepare response
+	  $rows = array();
+	  foreach($models as $model){
+	    if($model->status == "Available"){
+	      $rows[] = $model->attributes;
+	    }
+	  }
+	  // Send the response
+	  $this->_sendResponse(200, CJSON::encode($rows));
+	}
+      }
+      else {
+	// Get the respective model instance
+	// URL http://localhost/~vgaur/fiindme/index.php/find/deal
+	switch($_GET['model'])
+	  {
+	  case 'deal':
+	    $criteria = new CDbCriteria();
+	    $criteria->limit=10;
+	    $models = Deal::model()->findAll($criteria);
+	    break;
+	  default:
+	    // Model not implemented error
+	    $this->_sendResponse(501, sprintf(
+					      'Error: Mode <b>list</b> is not implemented for model <b>%s</b>',
+					      $_GET['model']) );
+	    Yii::app()->end();
+	  }
+	
+	// Did we get some results?
+	if(empty($models)) {
+	  // No
+	  $this->_sendResponse(200, 
+			       sprintf('No items were found for model <b>%s</b>', $_GET['model']) );
+	} else {
+
+	  // Prepare response
+	  $rows = array();
+	  foreach($models as $model){
+	    if($model->status == "Available"){
+	      $rows[] = $model->attributes;
+	    }
+	  }
+	  // Send the response
+	  $this->_sendResponse(200, CJSON::encode($rows));
+	}
       }
     }//end actionList
 
@@ -60,9 +113,9 @@ class FindController extends Controller
     public function actionView()
     {
       // Check if id was submitted via GET
-      if(!isset($_GET['id']))
+      if(!isset($_GET['id'])){
         $this->_sendResponse(500, 'Error: Parameter <b>id</b> is missing' );
- 
+      }
       switch($_GET['model'])
 	{
 	  // Find respective model    
@@ -92,8 +145,18 @@ class FindController extends Controller
       }
     }
 
+    //GET: To view the deals in specific zip code
+    //URL http://localhost/~vgaur/fiindme/index.php/find/deal/94568
+    public function actionFilter()
+    {
+      echo $_GET;
+      foreach($_GET as $var=>$value) {
+	echo $var." ".$value;
+      }
+      $this->_sendResponse(200,$xml);
+    }
 
-    //GET: To view the deals by a specific merchant
+//GET: To view the deals by a specific merchant
     //URL http://localhost/~vgaur/fiindme/index.php/find/deal/merchant/4
     public function actionMerchant()
     {
@@ -423,11 +486,13 @@ class FindController extends Controller
 
     private function _convertDateToMysql($str_time)
     {
-      if(substr_count($value,"-") > 0){
+
+      if(substr_count($str_time,"-") > 0){
 	//Date is already there do not add new one
 	return $str_time;
       }
       $tdate = date("Y-m-d");
+      $tdate = "2013-07-08";
       $tdate = $tdate . " ";
       //add Sec
       $tdate = $tdate . $str_time . ":" . "00";
