@@ -40,8 +40,8 @@ class FindController extends Controller
 	switch($_GET['model'])
 	  {
 	  case 'deal':
-	    $criteria = new CDbCriteria();
-	    $criteria->limit=10;
+	    //$criteria = new CDbCriteria();
+	    //$criteria->limit=10;
 	    $models = Deal::model()->findByUserCriteria($zip_code,$mysql_start_time,$category);
 	    break;
 	  default:
@@ -374,12 +374,17 @@ class FindController extends Controller
       echo $table_user_code;
     }
 
-    echo $table_user_code;
     if($table_user_code == $user_code){
       // Set the Deal status to "CONFIRMED"
       $model->status = "CONFIRMED";
       // Try to save the model
       if($model->save()){
+	$status = "CONFIRMED";
+	$sql = "UPDATE tbl_deal_business_user SET status = :status WHERE deal_id_fk = :deal_id";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":deal_id",$_GET['id'], PDO::PARAM_INT);
+	$command->bindValue(":status",$model->status, PDO::PARAM_STR);
+	$command->execute();
 	$msg = "<h1>Congratulations</h1>";
 	$msg .= sprintf("Deal <b>%d</b> confirmed successfully", $_GET['id']);
 	$msg .= "<ul>";
