@@ -106,4 +106,32 @@ class Zipcode extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function findZipByMerchantId($merchant_id)
+	{
+	  $sql = "SELECT * FROM tbl_zipcode LEFT JOIN tbl_address
+	        ON tbl_zipcode.zipcode_id = tbl_address.zip_code_id_fk
+	        LEFT JOIN tbl_contact
+	        ON tbl_contact.address_id_fk = tbl_address.address_id
+	        LEFT JOIN tbl_merchant
+	        ON tbl_merchant.contact_id_fk = tbl_contact.contact_id
+	        WHERE tbl_merchant.merchant_id = :merchant_id
+	        LIMIT 0, 30 ";
+	  //$command = Yii::app()->db->createCommand($sql);
+	  //command->bindValue(":merchant_id",$merchant_id, PDO::PARAM_INT);
+	  //$results = $command->queryRow();
+	  //$result = Zipcode::model()->findAllBySql($sql,array(":merchant_id"=>$merchant_id));
+	  $merchant = Merchant::model()->findByPk($merchant_id);
+	  $result = $merchant['contact_id_fk'];
+	  #echo $result;
+	  $contact = Contact::model()->findByPk($result);
+	  $result1 = $contact['address_id_fk'];
+	  #echo $result1;
+	  $address = Address::model()->findByPk($result1);
+	  $result2 = $address['zip_code_id_fk'];
+	  $zipcode = Zipcode::model()->findByPk($result2);
+	  $result3 = $zipcode['zip_code'];
+	  #echo $result3;
+	  return $result3;
+
+	}
 }

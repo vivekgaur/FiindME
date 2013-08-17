@@ -108,4 +108,6 @@ class Merchant extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+
 }

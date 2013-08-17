@@ -116,6 +116,7 @@ class FindController extends Controller
       if(!isset($_GET['id'])){
         $this->_sendResponse(500, 'Error: Parameter <b>id</b> is missing' );
       }
+      $zip_code_id = $_GET['id'];
       switch($_GET['model'])
 	{
 	  // Find respective model    
@@ -137,11 +138,67 @@ class FindController extends Controller
         foreach($models as $model){
 	  $rows[] = $model;
 	}
+	//Update the Alert Data
+	$this->actionZipCodeUpdate($zip_code_id);
         // Send the response
 	#$jsonC = new XJSON();
 	$xml = (CJSON::encode($rows));
 	#echo $xml;
         $this->_sendResponse(200,$xml);
+      }
+    }
+
+    //GET: To get total number of deals in a specific zip code
+    //URL http://localhost/~vgaur/fiindme/index.php/find/deal/total/94568
+    public function actionViewTotal()
+    {
+      // Check if id was submitted via GET
+      if(!isset($_GET['id'])){
+        $this->_sendResponse(500, 'Error: Parameter <b>id</b> is missing' );
+      }
+      $zipCode;
+      switch($_GET['model'])
+	{
+	  // Find respective model    
+        case 'deal':
+	  #echo $_GET['id'];
+	  $zipCode = Zipcode::model()->findZipByMerchantId($_GET['id']);
+	  //echo $zipCode;
+	  //$zipCode = 4200;
+	  $models = Deal::model()->findByZipCode($zipCode);
+	  break;
+        default:
+	  $this->_sendResponse(501, sprintf(
+					    'Mode <b>view</b> is not implemented for model <b>%s</b>',
+					    $_GET['model']) );
+	  Yii::app()->end();
+	}
+      // Did we find the requested models? If not, raise an error
+      if(empty($models))
+        $this->_sendResponse(404, 'No Item found with id '.$_GET['id']);
+      else{
+	$number = 0;
+	foreach($models as $model){
+	  if ($model->status == "Available") {
+	    ++$number;
+	  }
+	}
+	
+	//Get Total Number of Users
+	$sql = "SELECT * FROM tbl_total_user WHERE zip_code_id_fk = :zip_code_id";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":zip_code_id",$zipCode, PDO::PARAM_INT);
+	$rows = $command->query();
+	foreach($rows as $row){
+	  $total_users = $row['total_users'];      
+	}
+	
+	//Alert Data
+	$alert_data = array();
+	$alert_data['total_deals'] = $number;
+	$alert_data['zip_code'] = $zipCode;
+	$alert_data['total_users'] = $total_users;
+        $this->_sendResponse(200,json_encode($alert_data));
       }
     }
 
@@ -192,6 +249,58 @@ class FindController extends Controller
         $this->_sendResponse(200,$xml);
       }
     }
+
+    //Function to update tbl_user_interested 
+    // To be called during  URL http://localhost/~vgaur/fiindme/index.php/find/deal/update/id
+    public function actionMerchantUpdate($merchant_id)
+    {
+      //Check if merchant_id is in the table
+      $sql = "SELECT * FROM tbl_user_interested WHERE merchant_id_fk = :merchant_id";
+      $command = Yii::app()->db->createCommand($sql);
+      $command->bindValue(":merchant_id",$merchant_id, PDO::PARAM_INT);
+      $result = $command->query();
+      if($result){
+	$sql = "UPDATE tbl_user_interested SET total_user = total_user + 1 WHERE merchant_id_fk = :merchant_id";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":merchant_id",$merchant_id, PDO::PARAM_INT);
+	$result = $command->execute();
+      }
+      else {
+	$num = 1;
+	$sql = "INSERT INTO tbl_user_interested (merchant_id_fk,total_user) VALUES (:merchant_id, :total_user)";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":merchant_id",$merchant_id, PDO::PARAM_INT);
+	$command->bindValue(":total_user",$num, PDO::PARAM_INT);
+	$result = $command->execute();
+      }
+
+    }//actionMerchantUpdate
+
+    //Function to update tbl_total_user
+    // To be called during  URL http://localhost/~vgaur/fiindme/index.php/find/deal/zipcode
+    public function actionZipCodeUpdate($zip_code_id)
+    {
+      //Check if zip_code_id is in the table
+      $sql = "SELECT * FROM tbl_total_user WHERE zip_code_id_fk = :zip_code_id";
+      $command = Yii::app()->db->createCommand($sql);
+      $command->bindValue(":zip_code_id",$zip_code_id, PDO::PARAM_INT);
+      $result = $command->query();
+      if($result){
+	$sql = "UPDATE tbl_total_user SET total_users = total_users + 1 WHERE zip_code_id_fk = :zip_code_id";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":zip_code_id",$zip_code_id, PDO::PARAM_INT);
+	$result = $command->execute();
+      }
+      else {
+	$num = 1;
+	$sql = "INSERT INTO tbl_total_users (zip_code_id_fk,total_users) VALUES (:zip_code_id, :total_users)";
+	$command = Yii::app()->db->createCommand($sql);
+	$command->bindValue(":zip_code_id",$zip_code_id, PDO::PARAM_INT);
+	$command->bindValue(":total_users",$num, PDO::PARAM_INT);
+	$result = $command->execute();
+      }
+
+    }//actionZipCodeUpdate
 
     public function actionCreate()
     {

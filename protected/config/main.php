@@ -42,6 +42,7 @@ return array(
 				 // REST patterns
 			 array('find/list', 'pattern'=>'find/<model:\w+>', 'verb'=>'GET'),
 			 array('find/view', 'pattern'=>'find/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
+			 array('find/viewtotal', 'pattern'=>'find/<model:\w+>/total/<id:\d+>', 'verb'=>'GET'),
 			 array('find/merchant', 'pattern'=>'find/<model:\w+>/merchant/<id:\d+>', 'verb'=>'GET'),
 			 array('find/confirm', 'pattern'=>'find/<model:\w+>/merchant/<id:\d+>/<code:\d+>', 'verb'=>'PUT'),
 			 array('find/update', 'pattern'=>'find/<model:\w+>/<id:\d+>', 'verb'=>'PUT'),
