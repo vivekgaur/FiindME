@@ -141,7 +141,6 @@ class FindController extends Controller
 	  $rows[] = $model;
 	}
 	//Update the Alert Data
-	echo "ZipCode:::::".$zip_code_id;
 	$this->actionZipCodeUpdate($zip_code_id);
         // Send the response
 	#$jsonC = new XJSON();
