@@ -65,7 +65,9 @@ class FindController extends Controller
 	    if($model->status == "Available"){
 	      $rows[] = $model->attributes;
 	    }
-	  }
+	  }//Update the Alert Data
+	  $this->actionZipCodeUpdate($zip_code);
+	  
 	  // Send the response
 	  $this->_sendResponse(200, CJSON::encode($rows));
 	}
@@ -139,6 +141,7 @@ class FindController extends Controller
 	  $rows[] = $model;
 	}
 	//Update the Alert Data
+	echo "ZipCode:::::".$zip_code_id;
 	$this->actionZipCodeUpdate($zip_code_id);
         // Send the response
 	#$jsonC = new XJSON();
