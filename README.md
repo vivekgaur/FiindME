@@ -1,13 +1,26 @@
-# fiindme
-YII based PHP backend for FiindME
-1. Database: MySQL
-2. MVC concern separation
-3. REST APIs for
-  a. Deal Creation
-  b. Deal Update
-  c. Deal Deletion
-4. REST APIs are routed by:
-  a. Router in the config files
-5. protected/config/main.php : Update this file with the proper REST patterns
-6. protected/controllers/FindController.php : Update the APIs corresponding the to config file patterns.
-6. Scrips to Generate/Test the Deal in MySQL
+# FiindME
+## YII based PHP backend for FiindME
+
+##Requirements
+- Database: MySQL
+
+- Yii Framwork: Model-View-Controller
+
+- REST APIs for
+  - Deal Creation
+  - Deal Update
+  - Deal Deletion
+  
+- REST APIs are routed by:
+  - Router in the config files
+  - **protected/config/main.php** : Update this file with the proper REST patterns
+  - **protected/controllers/FindController.php** : Update the APIs corresponding the to config file patterns.
+  
+ - Geonames.org for Geolocation Data
+
+
+## Scripts to Generate/Test the Deals in MySQL
+- scripts/address.py
+- scripts/phone.py
+- scripts/merchant.py
+- scripts/deal_gen.py
